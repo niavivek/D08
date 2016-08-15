@@ -10,16 +10,22 @@
 
 # Body
 def store_to_dict():
-    pass
+	words_in_roster = {}#initialize dict
+	idx = 1#value for dict
+	with open("words.txt",'r') as roster:#open file
+		for lines in roster: #iterate the lines
+			words_in_roster[lines.strip()] = idx # store word as key and index as value
+			idx += 1#increment index
+	return words_in_roster
 
 
 ###############################################################################
 def main():  # DO NOT CHANGE BELOW
-    words_dict = store_to_dict()
-    if "this" in words_dict:
-        print("Yup.")
-    if "qwertyuiop" in words_dict:
-        print("Hmm.")
+	words_dict = store_to_dict()
+	if "this" in words_dict:
+		print("Yup.")
+	if "qwertyuiop" in words_dict:
+		print("Hmm.")
 
 if __name__ == '__main__':
-    main()
+	main()
